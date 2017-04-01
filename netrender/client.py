@@ -351,7 +351,13 @@ def requestResult(conn, job_id, frame):
 class NetworkRenderEngine(bpy.types.RenderEngine):
     bl_idname = 'NET_RENDER'
     bl_label = "Network Render"
-    bl_use_postprocess = False
+
+    # Netrender completes all the post processing already, saved to the .exr, but the retrieved files don't include
+    # it, just the raw render.  Setting this to true causes the client to retrieve the fully post-processed image.
+    # Ideally this would but I haven't yet figured out where I can change the bl_use_postprocess value where I
+    # have access to a potential 'netsettings.post_process' value.
+    bl_use_postprocess = True
+
     def render(self, scene):
         try:
             if scene.network_render.mode == "RENDER_CLIENT":

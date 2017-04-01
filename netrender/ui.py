@@ -586,7 +586,7 @@ class NetRenderSettings(bpy.types.PropertyGroup):
         NetRenderSettings.save_before_job = BoolProperty(
                         name="Save Before Job",
                         description="Save current file before sending a job",
-                        default = False)
+                        default = True)
 
         NetRenderSettings.chunks = IntProperty(
                         name="Chunks",
