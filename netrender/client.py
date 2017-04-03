@@ -350,7 +350,7 @@ def requestResult(conn, job_id, frame):
 
 class NetworkRenderEngine(bpy.types.RenderEngine):
     bl_idname = 'NET_RENDER'
-    bl_label = "Network Render"
+    bl_label = "Network Render (Hackerspace Mod)"
 
     # Netrender completes all the post processing already, saved to the .exr, but the retrieved files don't include
     # it, just the raw render.  Setting this to true causes the client to retrieve the fully post-processed image.
